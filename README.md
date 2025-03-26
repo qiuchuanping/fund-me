@@ -8,6 +8,8 @@ B站精翻地址： https://www.bilibili.com/video/BV13a4y1F7V3
 
 本次项目没有再使用Remix了，而是使用了IDE工具Visual Studio Code ，集成更专业的Foundry框架开发,更接近真实的开发环境，完成了开发、测试、部署等一系列操作。
 
+前端项目：https://github.com/qiuchuanping/fund-me-web.git
+
 ## Install Foundry 
 ```shell
 $ curl -L https://foundry.paradigm.xyz | bash
@@ -74,6 +76,7 @@ $ forge test --fork-url <your_rpc_url>
 ```
 - fork-url 参数说明
 1. --fork-url 允许你指定一个以太坊节点（如 Infura、Alchemy 或本地节点）的 RPC URL
+   
    > 例如：在alchemy平台申请的rpc url为https://eth-sepolia.g.alchemy.com/v2/BxZDQXWdaktq45p3jtPjEduwwV8DDbqB
 2. forge测试框架会从该节点获取链上数据，并在本地创建一个分叉环境,所有测试都在这个分叉环境中运行，而不是在真实的链上
 3. 通过 --fork-url，开发者可以在本地安全地测试与主网或其他链的交互，而无需担心影响真实链上状态或消耗真实 gas。
@@ -110,7 +113,7 @@ $ forge test --fork-url https://eth-sepolia.g.alchemy.com/v2/BxZDQXWdaktq45p3jtP
         if(activeNetworkConfig.priceFeed != address(0)){
             return activeNetworkConfig;
         }
-
+  
         vm.startBroadcast();
         MockV3Aggregator mockPriceFeed = new MockV3Aggregator(PRICE_FEED_DECIMALS,PRICE_FEED_INITIAL_ANSWER);
         vm.stopBroadcast();
@@ -176,7 +179,7 @@ Script ran successfully.
 ```shell
 $ cast storage <合约地址> <槽索引>
 $ cast storage 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512 0 
-``` 
+```
 
 ## Anvil
 - 运行本地测试网节点

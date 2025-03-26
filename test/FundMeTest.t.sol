@@ -123,7 +123,6 @@ contract FundMeTest is Test{
     }
 
     function testBalance() public funded {
-        uint256 amount = 0.001 * 10 ** 18;
         vm.prank(fundMe.getOwner());
         uint256 balance = fundMe.balanceOf();
         console.log(balance);
